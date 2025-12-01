@@ -1,17 +1,18 @@
 [
   {
-    "nombre": "Bolso Artesanal Lino",
-    "precio": "45,00€",
-    "imagen": "https://images.unsplash.com/photo-1590874103328-2784de6d4953?q=80&w=1080&h=1400&fit=crop"
+    "nombre": "Pack Calcetinese Happy Socks",
+    "precio": "30,00€",
+    "imagen": "https://www.bicosdefio.com/cdn/shop/files/pack-regalo-3-calcetines-happy-socks-celebrations_7.webp"
   },
   {
-    "nombre": "Bufanda Lana Merino",
-    "precio": "32,50€",
-    "imagen": "https://images.unsplash.com/photo-1606297314545-021c33f2081e?q=80&w=1080&h=1400&fit=crop"
+    "nombre": "Bombonera Metalizada Lola Casademunt",
+    "precio": "99,90€",
+    "imagen": "https://www.bicosdefio.com/cdn/shop/files/bombonera-metalizada-lola-casademunt-logo-relieve-plata-LS2604014_8.webp"
   },
   {
-    "nombre": "Cesta Mimbre Decor",
-    "precio": "28,00€",
-    "imagen": "https://images.unsplash.com/photo-1595867160754-07238a8e3d64?q=80&w=1080&h=1400&fit=crop"
+    "nombre": "Top Lentejuelas Vero Moda",
+    "precio": "54,99€",
+    "imagen": "https://www.bicosdefio.com/cdn/shop/files/top-lazo-espalda-vero-moda-laila-negro_10322243_3.webp"
   }
+
 ]
