@@ -2,161 +2,173 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo Premium Bicos de Fío</title>
+    <title>Catálogo Editorial Bicos de Fío</title>
     <style> * { box-sizing: border-box; margin: 0; padding: 0; } </style>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
     <style>
         body {
             width: 1080px; height: 1920px; overflow: hidden;
-            /* Fondo general gris muy sutil para dar profundidad */
-            background-color: #fafafa; 
+            background-color: #fff; /* Fondo blanco puro */
             color: #000;
             font-family: 'Inter', sans-serif;
-            display: flex; justify-content: center; align-items: center;
-        }
-
-        /* Contenedor Principal "Hoja Blanca" */
-        .main-container {
-            width: 100%; height: 100%;
-            background: #fff;
             display: flex; flex-direction: column;
-            position: relative;
-            /* Sombra suave para separarlo del fondo */
-            box-shadow: 0 0 50px rgba(0,0,0,0.05);
+            justify-content: space-between; /* Distribuye arriba, medio y abajo */
+            padding: 50px 60px; /* Marco blanco alrededor de toda la pantalla */
         }
 
-        /* --- ZONA IMAGEN (1400px) - EL MARCO --- */
-        .image-zone {
-            width: 1080px;
-            height: 1400px;
-            padding: 40px; /* Espacio para el marco */
-            background-color: #fff;
-            position: relative;
-            z-index: 1;
+        /* --- 1. CABECERA INSPIRACIONAL (Nuevo) --- */
+        .header-zone {
+            height: 120px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid #000; /* Línea de separación estilo revista */
+            margin-bottom: 40px;
+        }
+        
+        .inspiration-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 38px;
+            color: #333;
         }
 
-        /* El Marco del Producto (Frame) */
+        .season-tag {
+            font-weight: 900; font-size: 20px; letter-spacing: 2px; text-transform: uppercase;
+            background: #000; color: #fff; padding: 10px 20px;
+        }
+
+        /* --- 2. ZONA IMAGEN (El Marco) --- */
         .image-frame {
-            width: 100%; height: 100%;
+            width: 100%;
+            height: 1250px; /* Ajustado para dejar sitio al header */
             position: relative;
             overflow: hidden;
-            /* Borde sutil y sombra elegante para definir productos blancos */
-            border: 1px solid rgba(0,0,0,0.08);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            background: #fff; /* Asegura fondo blanco dentro del marco */
+            /* Marco fino negro para encuadrar la foto blanca sobre fondo blanco */
+            border: 1px solid #e0e0e0; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08); /* Sombra elegante */
         }
 
         .main-img {
             width: 100%; height: 100%;
             object-fit: cover;
             display: block;
-            /* Animación de "respiración" lenta y lujosa */
-            animation: slowBreathe 25s infinite alternate ease-in-out;
-            transform-origin: center center;
+            animation: slowPan 25s infinite alternate ease-in-out;
         }
-        @keyframes slowBreathe { from { transform: scale(1); } to { transform: scale(1.08); } }
+        @keyframes slowPan { from { transform: scale(1.0); } to { transform: scale(1.08); } }
 
-
-        /* --- ZONA INFO (520px) --- */
-        .info-zone {
-            height: 520px;
-            padding: 0 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            background: #fff;
-            z-index: 2;
+        /* --- 3. ZONA INFO (Footer Grid) --- */
+        .info-grid {
+            height: 350px;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 65% 35%; /* 65% Texto | 35% Logo */
+            align-items: center;
         }
 
-        /* Acento de diseño */
-        .line-accent {
-            width: 60px; height: 4px; background: #000;
-            margin-bottom: 40px; opacity: 0.8;
+        /* Columna Izquierda: Textos */
+        .text-col {
+            padding-right: 40px; /* Margen de seguridad con el logo */
+            border-right: 1px solid #eee; /* Línea sutil de separación */
+            height: 80%; /* Para que la línea divisoria no sea tan alta */
+            display: flex; flex-direction: column; justify-content: center;
         }
 
-        /* Nombre del producto (Nuevo estilo) */
         .product-name {
-            font-size: 45px; /* Más pequeño */
-            font-weight: 500; /* Peso medio */
-            text-transform: uppercase; /* Mayúsculas */
-            letter-spacing: 2px; /* Espaciado amplio premium */
-            line-height: 1.3;
+            font-family: 'Inter', sans-serif;
+            font-size: 42px; /* Tamaño controlado */
+            font-weight: 600; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            color: #444;
             margin-bottom: 15px;
-            color: #333;
-            /* Limitamos a 2 líneas */
+            /* Si es muy largo, puntos suspensivos */
             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
         }
 
-        /* Precio (Nuevo estilo) */
         .product-price {
-            font-size: 90px; /* GIGANTE */
-            font-weight: 800; /* Inter Black */
+            font-size: 130px; /* Precio Gigante */
+            font-weight: 900;
             color: #000;
-            letter-spacing: -1px; /* Letras muy juntas para impacto */
+            letter-spacing: -4px;
             line-height: 1;
         }
 
-        /* --- LOGO CORPORATIVO (Abajo a la derecha) --- */
-        .brand-logo-footer {
-            position: absolute;
-            bottom: 60px; right: 80px; /* Esquina inferior derecha de la zona info */
-            width: 280px; /* Ajusta el tamaño según tu logo */
-            height: auto;
-            opacity: 0.8; /* Un poco sutil para no pelear con el precio */
-            filter: grayscale(100%); /* Opcional: fuerza el logo a negro/gris para elegancia */
+        /* Columna Derecha: Logo Aislado */
+        .logo-col {
+            display: flex;
+            justify-content: flex-end; /* Alinear a la derecha */
+            align-items: center;
+            padding-left: 40px;
         }
 
+        .brand-logo {
+            width: 100%; /* Ocupa el ancho de su columna */
+            max-width: 280px; /* Pero no más de esto */
+            height: auto;
+            object-fit: contain;
+            filter: grayscale(100%); /* Elegancia en blanco y negro (opcional) */
+            opacity: 0.9;
+        }
 
-        /* Animaciones de Entrada */
-        .animate-reveal {
-            opacity: 0;
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Efecto de "persiana" */
-            animation: revealText 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+        /* --- ANIMACIONES --- */
+        .fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+            opacity: 0; transform: translateY(30px);
         }
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
 
-        @keyframes revealText {
-            to { opacity: 1; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* Cortina de transición */
-        .white-flash {
+        .flash-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: #fff;
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.5s ease-in-out;
-            z-index: 99;
+            background: #fff; z-index: 99; pointer-events: none;
+            transition: opacity 0.5s ease;
+            opacity: 0;
         }
 
     </style>
 </head>
 <body>
 
-    <div class="white-flash" id="flash"></div>
+    <div class="flash-overlay" id="flash"></div>
 
-    <div class="main-container">
-        <div class="image-zone">
-            <div class="image-frame">
-                <img src="" class="main-img" id="img-el">
-            </div>
+    <div class="header-zone">
+        <div class="inspiration-text">"Artesanía hecha con el corazón"</div>
+        <div class="season-tag">FW 24/25</div>
+    </div>
+
+    <div class="image-frame">
+        <img src="" class="main-img" id="img-el">
+    </div>
+
+    <div class="info-grid">
+        
+        <div class="text-col">
+            <div class="product-name fade-in-up" id="name-el">Cargando...</div>
+            <div class="product-price fade-in-up delay-1" id="price-el">--</div>
         </div>
 
-        <div class="info-zone">
-            <div class="line-accent animate-reveal"></div>
-            <div class="product-name animate-reveal delay-1" id="name-el">Cargando...</div>
-            <div class="product-price animate-reveal delay-2" id="price-el">--</div>
-
-            <img src="logo.png" class="brand-logo-footer" alt="Bicos de Fío">
+        <div class="logo-col">
+            <img src="logo.png" class="brand-logo" alt="Bicos de Fío">
         </div>
+
     </div>
 
     <script>
         const JSON_URL = 'productos.json';
         const DURATION = 10000; 
+
+        // Frases inspiracionales que rotan aleatoriamente
+        const QUOTES = [
+            "Colección Mujer & Hombre",
+            "Especialistas en Calzado y Moda",
+            "Tus marcas favoritas en un solo lugar",
+            "Complementos que marcan la diferencia",
+            "Bicos de Fío: Tu espacio de moda"
+        ];
 
         let products = [];
         let currentIndex = 0;
@@ -175,25 +187,30 @@
         function renderProduct(index) {
             const p = products[index];
             const flash = document.getElementById('flash');
+            
             const nameEl = document.getElementById('name-el');
             const priceEl = document.getElementById('price-el');
             const imgEl = document.getElementById('img-el');
+            const quoteEl = document.querySelector('.inspiration-text');
 
-            // 1. Flash Blanco
+            // TRANSICIÓN SALIDA
             flash.style.opacity = 1;
 
             setTimeout(() => {
-                // 2. Datos
+                // CAMBIAR DATOS
                 imgEl.src = p.imagen;
                 nameEl.innerText = p.nombre;
                 priceEl.innerText = p.precio;
 
-                // 3. Reiniciar Animaciones (Clip-path reveal)
+                // Cambiar frase inspiracional aleatoria
+                const randomQuote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+                quoteEl.innerText = `"${randomQuote}"`;
+
+                // REINICIAR ANIMACIONES CSS
                 resetAnim(nameEl);
                 resetAnim(priceEl);
-                resetAnim(document.querySelector('.line-accent'));
 
-                // 4. Revelar
+                // TRANSICIÓN ENTRADA
                 flash.style.opacity = 0;
             }, 500);
         }
