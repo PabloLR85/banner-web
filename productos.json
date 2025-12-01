@@ -16,9 +16,14 @@
   }
   {
     "nombre": "Pack 2 Calcetines Happy Socks Gingerbread",
-    "precio": "20€",
+    "precio": "20,00€",
     "imagen": "https://www.bicosdefio.com/cdn/shop/files/pack-regalo-2-calcetines-happy-socks-gingerbread-heart_4.webp"
   }
-
+  {
+    "nombre": "Sudadera Rayas ONLY Liza Burdeos",
+    "precio": "39,99€",
+    "imagen": "https://www.bicosdefio.com/cdn/shop/files/sudadera-only-liza-rayas-chocolate_15365019_4.webp"
+  }
 ]
+
 
